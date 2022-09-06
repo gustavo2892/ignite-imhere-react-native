@@ -1,13 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
-import { Text, View } from 'react-native';
+import { Text, View, TextInput, TouchableOpacity } from 'react-native';
 
 import { styles } from './styles';
 
 export default function Home() {
+
+  function handleParticipantAdd() {
+    console.log('Clicou');
+  };
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Text style={styles.eventName}>Nome do Evento</Text>
+      <Text style={styles.eventDate}>Sexta, 4 de novembro de 2022</Text>
+      <TextInput
+        style={styles.input}
+        placeholder="Nome do participante"
+        placeholderTextColor={"#6B6B6B"}
+      />
+      <TouchableOpacity style={styles.button} onPress={handleParticipantAdd}>
+        <Text style={styles.buttonText}>
+          +
+        </Text>
+      </TouchableOpacity>
     </View>
   );
 };
